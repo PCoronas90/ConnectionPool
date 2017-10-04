@@ -18,14 +18,9 @@ seguente codice nel context.xml di Tomcat:
 <Resource name="jdbc/dbTest" auth="Container"
  type="javax.sql.DataSource" username="root" password="password"
  driverClassName="com.mysql.jdbc.Driver"
- url="jdbc:mysql://localhost:3305/dbTest"
+ url="jdbc:mysql://localhost:8090/dbTest"
  maxActive="15" maxIdle="5" />
 		
-<Resource name="jdbc/dbTest" auth="Container"
- type="javax.sql.DataSource" username="root" password="password"
- driverClassName="com.mysql.jdbc.Driver"
- url="jdbc:mysql://localhost:3305/dbTest"
- maxActive="15" maxIdle="5" />
 ```
 
 
