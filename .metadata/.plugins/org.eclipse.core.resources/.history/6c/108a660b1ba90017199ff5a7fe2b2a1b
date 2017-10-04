@@ -1,12 +1,12 @@
 package it.test.connectionPool;
 
 /**Servlet di esempio per mostrare il funzionamento di un Pool di connessioni**/
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -20,16 +20,17 @@ import javax.sql.DataSource;
  * @author PietroCoronas
  *
  */
-
 public class ServletExample extends HttpServlet {
 	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	
 	private DataSource ds;
 	private Connection cnn;
 	private Statement stm;
 	
-	/** Inizializzazione del DataSource
+	/* Inizializzazione del DataSource
 	 * @see javax.servlet.GenericServlet#init()
 	 */
 	public void init() throws ServletException {
@@ -46,7 +47,7 @@ public class ServletExample extends HttpServlet {
 		}
 	}
 
-	/** Semplice metodo get di una servlet. Istanzia la connessione ed effettua una query su db.
+	/* Semplice metodo get di una servlet. Istanzia la connessione ed effettua una query su db.
 	 * Il risultato viene stampato in console.
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
@@ -61,10 +62,9 @@ public class ServletExample extends HttpServlet {
 			stm = cnn.createStatement();
 			//Query
 			String query = "select name,value from tableExample where name='testConnection'";
-			//Risultato
+			
 			resultSet = stm.executeQuery(query);
 			while (resultSet.next()) {
-				//Stampo i risultati a video
 				System.out.println(resultSet.getString(1) + resultSet.getString(2) + resultSet.getString(3));
 			}
 		} catch (SQLException e) {

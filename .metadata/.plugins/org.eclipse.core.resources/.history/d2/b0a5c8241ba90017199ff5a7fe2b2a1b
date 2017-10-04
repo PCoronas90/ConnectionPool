@@ -20,16 +20,18 @@ import javax.sql.DataSource;
  * @author PietroCoronas
  *
  */
-
 public class ServletExample extends HttpServlet {
 	
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	
 	private DataSource ds;
 	private Connection cnn;
 	private Statement stm;
 	
-	/** Inizializzazione del DataSource
+	/* Inizializzazione del DataSource
 	 * @see javax.servlet.GenericServlet#init()
 	 */
 	public void init() throws ServletException {
@@ -46,7 +48,7 @@ public class ServletExample extends HttpServlet {
 		}
 	}
 
-	/** Semplice metodo get di una servlet. Istanzia la connessione ed effettua una query su db.
+	/* Semplice metodo get di una servlet. Istanzia la connessione ed effettua una query su db.
 	 * Il risultato viene stampato in console.
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
